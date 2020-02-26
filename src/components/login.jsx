@@ -3,7 +3,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import "firebase/auth";
 
-function Authentication({ isSignedIn }) {
+function Login({ isSignedIn }) {
 	const uiConfig = {
 		signInFlow: "popup",
 		signInOptions: [
@@ -29,4 +29,4 @@ function Authentication({ isSignedIn }) {
 	);
 }
 
-export default Authentication;
+export default Login;

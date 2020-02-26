@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 import { ProjectProvider } from "../context/projectContext";
 import { TaskProvider } from "../context/taskContext";
 
@@ -8,7 +8,11 @@ import TaskContainer from "./tasks/container";
 import Board from "./board";
 import firebase from "../services/firebase";
 
-const Dashboard = ({ user }) => {
+import {AuthContext} from "../context/authContext"
+
+const Dashboard = () => {
+const [user] = useContext(AuthContext)
+
 	return (
 		<div className="dashboard">
 			<header>

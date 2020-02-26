@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { TaskContext } from "../context/taskContext";
 import firebase from "../services/firebase";
 
 const Board = () => {
-	const [state, setState] = useState("Start");
+	const [start, setStart] = useState(false);
 	const [tasks, setTask] = useContext(TaskContext);
 
 	const checkZero = value => {
@@ -11,7 +11,11 @@ const Board = () => {
 	};
 
 	const triggerTimer = task => {
-		console.log("start/stop timer");
+		setStart(!start)
+		let hrs = task.timer[0];
+		let min = task.timer[1];
+		let sec = task.timer[2];
+
 	};
 
 	const Line = () => {
@@ -30,7 +34,7 @@ const Board = () => {
 						{task.timer.map(function(time) {
                             i++
                             let separator = i < 3 ? ':' : ''
-							return <span>{checkZero(time)}{separator}</span>
+							return <span key={i}>{checkZero(time)}{separator}</span>
 						})}
 					</td>
 					<td>

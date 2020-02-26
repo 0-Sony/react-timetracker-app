@@ -8,7 +8,7 @@ const List = () => {
              <ul className="list-group">
 				{
                     tasks.map(task =>(
-                    <Item task={task}/>
+                    <Item key={task.id} task={task}/>
                     ))
                 }
 			</ul>

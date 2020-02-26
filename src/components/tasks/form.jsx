@@ -19,11 +19,13 @@ const TaskForm = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		let projectTitle = "";
-		projects.map(function(project) {
-			if (project.id == projectId) {
+		
+		projects.forEach(project => {
+			if (project.id === projectId) {
 				projectTitle = project.title;
 			}
 		});
+
 		let newTask = {
 			title: value,
 			project_id: projectId,
