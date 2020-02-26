@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProjectContext } from "../context/projectContext";
+import { ProjectContext } from "../../../context/projectContext";
 
 const ProjectSelector = () => {
 	const [projects] = useContext(ProjectContext);

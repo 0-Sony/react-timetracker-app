@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.png";
 import "./App.css";
-import firebase from "./firebase";
+import firebase from "./services/firebase";
 
 import Authentication from "./components/authentication";
 import Dashboard from "./components/dashboard";

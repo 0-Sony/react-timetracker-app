@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
-import { TaskContext } from "../context/taskContext";
+import React from "react"
 
-const TaskList = () => {
-    const [tasks] = useContext(TaskContext);
-	return tasks.map(function(task) {
-		return (
-			<li
+const item = ({task}) => {
+    return (
+        <li
 				className="list-group-item d-flex justify-content-between align-items-center"
 				key={task.id}
 			>
@@ -13,8 +10,7 @@ const TaskList = () => {
                 {/* @TODO render dynamic - should display the timer */}
 				<span className="badge badge-primary badge-pill">14</span>
 			</li>
-		);
-	});
-};
+    )
+}
 
-export default TaskList;
+export default item

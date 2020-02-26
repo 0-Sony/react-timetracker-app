@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import firebase from "../firebase";
+import firebase from "../services/firebase";
 
 export const TaskContext = createContext();
 

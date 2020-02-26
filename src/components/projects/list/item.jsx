@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import { ProjectContext } from "../context/projectContext";
+import React from "react";
 
-const ProjectList = () => {
-	const [projects] = useContext(ProjectContext);
-	return projects.map(function(project) {
+const ProjectListItem = ({project}) => {
 		return (
 			<li
 				className="list-group-item d-flex justify-content-between align-items-center"
@@ -14,7 +11,6 @@ const ProjectList = () => {
 				<span className="badge badge-primary badge-pill">14</span>
 			</li>
 		);
-	});
 };
 
-export default ProjectList;
+export default ProjectListItem;

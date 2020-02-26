@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { TaskContext } from "../context/taskContext";
-import firebase from "../firebase";
+import firebase from "../services/firebase";
 
 const Board = () => {
 	const [state, setState] = useState("Start");

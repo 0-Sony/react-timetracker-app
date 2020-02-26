@@ -1,12 +1,12 @@
 import React from "react";
-import Projects from "./projects";
-import { ProjectProvider, ProjectContext } from "../context/projectContext";
-import Task from "./task";
-import { TaskProvider, TaskContext } from "../context/taskContext";
-import ProjectForm from "./projectForm";
-import TaskForm from "./taskForm";
+import { ProjectProvider } from "../context/projectContext";
+import { TaskProvider } from "../context/taskContext";
+
+import ProjectContainer from "./projects/container";
+import TaskContainer from "./tasks/container";
+
 import Board from "./board";
-import firebase from "../firebase";
+import firebase from "../services/firebase";
 
 const Dashboard = ({ user }) => {
 	return (
@@ -25,45 +25,13 @@ const Dashboard = ({ user }) => {
 					</div>
 				</nav>
 				<div className="container">
-					<div className="row">
 						<ProjectProvider>
 							<TaskProvider>
 								<Board />
-								<ProjectForm />
-								<div className="projects col">
-									<div>
-										<ProjectContext.Consumer>
-											{context => (
-												<h3>
-													Number Projects :{" "}
-													{context[0].length}
-												</h3>
-											)}
-										</ProjectContext.Consumer>
-									</div>
-									<ul className="list-group">
-										<Projects />
-									</ul>
-								</div>
-								<TaskForm />
-								<div className="projects col">
-									<div>
-										<TaskContext.Consumer>
-											{context => (
-												<h3>
-													Number Tasks :{" "}
-													{context[0].length}
-												</h3>
-											)}
-										</TaskContext.Consumer>
-									</div>
-									<ul className="list-group">
-										<Task />
-									</ul>
-								</div>
+								<ProjectContainer/>
+								<TaskContainer />
 							</TaskProvider>
 						</ProjectProvider>
-					</div>
 				</div>
 			</header>
 		</div>

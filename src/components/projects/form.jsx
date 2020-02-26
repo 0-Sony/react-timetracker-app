@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "../firebase";
+import firebase from "firebase";
 
 const ProjectForm = () => {
 	const [value, setValue] = useState("");
@@ -27,7 +27,7 @@ const ProjectForm = () => {
 				<label>Project name</label>
 				<input
 					type="text"
-					className="form-control"
+					className="form-control form-control-lg"
 					placeholder="Project Name"
 				/>
 				<button
