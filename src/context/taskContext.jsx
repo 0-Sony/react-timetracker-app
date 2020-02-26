@@ -12,7 +12,6 @@ export const TaskProvider = props => {
 			.onSnapshot(snapshot => {
 				const newTask = snapshot.docs.map(doc => ({
 					id: doc.id,
-					isStarted : false,
 					...doc.data()
                 }));
 

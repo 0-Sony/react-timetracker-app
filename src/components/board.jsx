@@ -1,30 +1,61 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { TaskContext } from "../context/taskContext";
 import firebase from "../services/firebase";
 
 const Board = () => {
-	const [start, setStart] = useState(false);
-	const [tasks, setTask] = useContext(TaskContext);
+	const [tasks] = useContext(TaskContext);
+	let increment;
 
 	const checkZero = value => {
 		return value < 10 ? `0${value}` : value;
 	};
 
 	const triggerTimer = task => {
-		setStart(!start)
-		let hrs = task.timer[0];
-		let min = task.timer[1];
-		let sec = task.timer[2];
+		let timer = task.timer;
+		increment = setInterval(() => {
+			if (task.is_started === true) {
+				let is_started = false;
+				firebase
+					.firestore()
+					.collection("task")
+					.doc(task.id)
+					.set({ ...task, is_started });
+				stopTimer();
+			} else {
 
+				timer[2] = timer[2] + 1;
+				if (timer[2] === 60) {
+					timer[1] = timer[1] + 1;
+					timer[2] = 0;
+				}
+
+				if (timer[1] === 60) {
+					timer[0] = timer[0] + 1;
+					timer[1] = 0;
+				}
+
+				if (timer[0] === 24) {
+					timer[0] = 0;
+				}
+				let is_started = true;
+				firebase
+					.firestore()
+					.collection("task")
+					.doc(task.id)
+					.set({ ...task, timer, is_started });
+			}
+		}, 1000);
+	};
+
+	const stopTimer = () => {
+		clearInterval(increment);
 	};
 
 	const Line = () => {
 		let count = 1;
-		
-		return tasks.map(task => {
-            let i = 0;
-			task.state = "start";
 
+		return tasks.map(task => {
+			let i = 0;
 			return (
 				<tr key={task.id}>
 					<th scope="row">{count++}</th>
@@ -32,9 +63,14 @@ const Board = () => {
 					<td>{task.title}</td>
 					<td>
 						{task.timer.map(function(time) {
-                            i++
-                            let separator = i < 3 ? ':' : ''
-							return <span key={i}>{checkZero(time)}{separator}</span>
+							i++;
+							let separator = i < 3 ? ":" : "";
+							return (
+								<span key={i}>
+									{checkZero(time)}
+									{separator}
+								</span>
+							);
 						})}
 					</td>
 					<td>
@@ -43,7 +79,7 @@ const Board = () => {
 							className="btn btn-info"
 							onClick={() => triggerTimer(task)}
 						>
-							{task.state}
+							{task.is_started ? "Stop" : "Start"}
 						</button>
 					</td>
 				</tr>
