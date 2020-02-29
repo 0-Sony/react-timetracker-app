@@ -4,6 +4,7 @@ import Row from "./board/row";
 
 const Board = () => {
 	const [tasks] = useContext(TaskContext);
+	let row = 1;
 	return (
 		<table className="table table-hover">
 			<thead>
@@ -17,7 +18,7 @@ const Board = () => {
 			</thead>
 			<tbody>
 				{tasks.map(task => (
-					<Row key={`row-${task.id}`} task={task} />
+					<Row key={`row-${task.id}`} task={task} rowNumber={row++} />
 				))}
 			</tbody>
 		</table>

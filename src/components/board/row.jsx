@@ -3,12 +3,11 @@ import TaskTimer from "./taskTimer";
 import checkZero from "../../tools/checkZero";
 import TriggerTimerBtn from "./triggerTimerBtn";
 
-const Row = ({ task }) => {
-	let count = 1;
+const Row = ({ task, rowNumber }) => {
 	let i = 0;
 	return (
 		<tr>
-			<th scope="row">{count++}</th>
+			<th scope="row">{rowNumber}</th>
 			<td>{task.project_title}</td>
 			<td>{task.title}</td>
 			<td>

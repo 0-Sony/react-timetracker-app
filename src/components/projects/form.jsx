@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 import firebase from "firebase";
 
 const ProjectForm = () => {
 	const [value, setValue] = useState("");
 	const [error, setError] = useState("");
+	const [user] = useContext(AuthContext);
 
 	const updateValue = e => {
 		setError(false);
@@ -15,7 +17,8 @@ const ProjectForm = () => {
 		if (value !== "") {
 			setError(false);
 			let newProject = {
-				title: value
+				title: value,
+				user_id: user.uid
 			};
 			firebase
 				.firestore()

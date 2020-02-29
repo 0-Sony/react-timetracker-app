@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import ProjectSelector from "./form/projectSelector";
 import { ProjectContext } from "../../context/projectContext";
+import { AuthContext } from "../../context/authContext";
 import firebase from "../../services/firebase";
 
 const TaskForm = () => {
@@ -9,6 +10,7 @@ const TaskForm = () => {
 	const [errorProject, setErrorProject] = useState("");
 	const [projectId, setProjectId] = useState("");
 	const [projects] = useContext(ProjectContext);
+	const [user] = useContext(AuthContext);
 
 	const updateValue = e => {
 		setError(false);
@@ -41,7 +43,8 @@ const TaskForm = () => {
 				project_id: projectId,
 				project_title: projectTitle,
 				is_started: false,
-				timer: [0, 0, 0]
+				timer: [0, 0, 0],
+				user_id: user.uid
 			};
 			firebase
 				.firestore()
