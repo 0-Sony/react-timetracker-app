@@ -7,8 +7,6 @@ const item = ({task}) => {
 				key={task.id}
 			>
 				{task.title}
-                {/* @TODO render dynamic - should display the timer */}
-				<span className="badge badge-primary badge-pill">14</span>
 			</li>
     )
 }
