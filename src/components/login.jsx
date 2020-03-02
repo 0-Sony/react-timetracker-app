@@ -3,7 +3,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import "firebase/auth";
 
-function Login({ isSignedIn }) {
+const Login = () => {
 	const uiConfig = {
 		signInFlow: "popup",
 		signInOptions: [
@@ -17,11 +17,7 @@ function Login({ isSignedIn }) {
 		}
 	};
 
-	return isSignedIn ? (
-		<div>
-			<button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-		</div>
-	) : (
+	return (
 		<StyledFirebaseAuth
 			uiConfig={uiConfig}
 			firebaseAuth={firebase.auth()}

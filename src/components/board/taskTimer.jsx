@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../../services/firebase";
-import useInterval from "../useInterval";
+import useInterval from "../../tools/useInterval";
 import checkZero from "../../tools/checkZero";
 
 function handleInterval(task) {
