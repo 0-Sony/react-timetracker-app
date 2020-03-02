@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/react-timetracker-app/static/css/main.13437067.chunk.css",
-    "main.js": "/react-timetracker-app/static/js/main.7ccc9758.chunk.js",
-    "main.js.map": "/react-timetracker-app/static/js/main.7ccc9758.chunk.js.map",
+    "main.js": "/react-timetracker-app/static/js/main.ef372d81.chunk.js",
+    "main.js.map": "/react-timetracker-app/static/js/main.ef372d81.chunk.js.map",
     "runtime-main.js": "/react-timetracker-app/static/js/runtime-main.ff637298.js",
     "runtime-main.js.map": "/react-timetracker-app/static/js/runtime-main.ff637298.js.map",
-    "static/js/2.9cc43182.chunk.js": "/react-timetracker-app/static/js/2.9cc43182.chunk.js",
-    "static/js/2.9cc43182.chunk.js.map": "/react-timetracker-app/static/js/2.9cc43182.chunk.js.map",
+    "static/js/2.de6325f9.chunk.js": "/react-timetracker-app/static/js/2.de6325f9.chunk.js",
+    "static/js/2.de6325f9.chunk.js.map": "/react-timetracker-app/static/js/2.de6325f9.chunk.js.map",
     "index.html": "/react-timetracker-app/index.html",
-    "precache-manifest.7840b6dce0e197bf74b9f574d7e4c9c8.js": "/react-timetracker-app/precache-manifest.7840b6dce0e197bf74b9f574d7e4c9c8.js",
+    "precache-manifest.64549960b0ea4b584b475b3bd9147563.js": "/react-timetracker-app/precache-manifest.64549960b0ea4b584b475b3bd9147563.js",
     "service-worker.js": "/react-timetracker-app/service-worker.js",
     "static/css/main.13437067.chunk.css.map": "/react-timetracker-app/static/css/main.13437067.chunk.css.map",
-    "static/js/2.9cc43182.chunk.js.LICENSE.txt": "/react-timetracker-app/static/js/2.9cc43182.chunk.js.LICENSE.txt",
+    "static/js/2.de6325f9.chunk.js.LICENSE.txt": "/react-timetracker-app/static/js/2.de6325f9.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/react-timetracker-app/static/media/logo.d6451315.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ff637298.js",
-    "static/js/2.9cc43182.chunk.js",
+    "static/js/2.de6325f9.chunk.js",
     "static/css/main.13437067.chunk.css",
-    "static/js/main.7ccc9758.chunk.js"
+    "static/js/main.ef372d81.chunk.js"
   ]
 }
